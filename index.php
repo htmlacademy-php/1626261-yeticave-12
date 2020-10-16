@@ -26,7 +26,8 @@ $user_name = "Marco_Dolya"; // укажите здесь ваше имя
         </form>
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
-        <nav class="user-menu" <?php if ($is_auth == 1) {
+        <nav class="user-menu"> 
+            <?php if ($is_auth == 1) {
             <div class="user-menu__logged">
               <p>Marco_Dolya</p>
                <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
@@ -42,8 +43,8 @@ $user_name = "Marco_Dolya"; // укажите здесь ваше имя
                   <a href="#">Вход</a>
                   </li>
                 </ul>
-            }
-        >
+            };
+        
 
         <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
 
