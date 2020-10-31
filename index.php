@@ -1,7 +1,52 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = ''; // укажите здесь ваше имя
+$user_name = "Marco_Dolya";
+$staff = ['Доски и лыжи' , 'Крепления' , 'Ботинки' , 'Одежда' , 'Инструменты' , 'Разное'];
+$lots = [
+           [
+            'name' => '2014 Rossignol District Snowboard' ,
+            'categories' => $staff[0] ,
+            'price' => 10999 ,
+            'image' => 'img/lot-1.jpg'
+           ],
+
+           [
+            'name' => 'DC Ply Mens 2016/2017 Snowboard' ,
+            'categories' => $staff[0] ,
+            'price' => 159999 ,
+            'image' => 'img/lot-2.jpg'
+           ],
+
+           [
+            'name' => 'Крепления Union Contact Pro 2015 года размер L/XL' ,
+            'categories' => $staff[1] ,
+            'price' => 8000 ,
+            'image' => 'img/lot-3.jpg'
+           ],
+
+           [
+            'name' => 'Ботинки для сноуборда DC Mutiny Charocal' ,
+            'categories' => $staff[2] ,
+            'price' => 10999 ,
+            'image' => 'img/lot-4.jpg'
+           ],
+
+           [
+            'name' => 'Куртка для сноуборда DC Mutiny Charocal' ,
+            'categories' => $staff[3] ,
+            'price' => 7500 ,
+            'image' => 'img/lot-5.jpg'
+           ],
+
+           [
+            'name' => 'Маска Oakley Canopy' ,
+            'categories' => $staff[5] ,
+            'price' =>  5400 ,
+            'image' => 'img/lot-6.jpg'
+           ]
+
+];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -26,9 +71,24 @@ $user_name = ''; // укажите здесь ваше имя
         </form>
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
-        <nav class="user-menu">
-
-        <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
+        <nav class="user-menu"> 
+            <?php if ($is_auth == 1): ?>
+            <div class="user-menu__logged">
+              <p>Marco_Dolya</p>
+               <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
+               <a class="user-menu__logout" href="#">Выход</a>
+            </div>
+        
+            <?php elseif ($is_auth == 0): ?>
+                <ul class="user-menu__list">
+                  <li class="user-menu__item">
+                  <a href="#">Регистрация</a>
+                  </li>
+                  <li class="user-menu__item">
+                  <a href="#">Вход</a>
+                  </li>
+                </ul>
+            <?php endif; ?>
 
         </nav>
     </div>
@@ -39,10 +99,16 @@ $user_name = ''; // укажите здесь ваше имя
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
         <ul class="promo__list">
-            <!--заполните этот список из массива категорий-->
-            <li class="promo__item promo__item--boards">
-                <a class="promo__link" href="pages/all-lots.html">Имя категории</a>
-            </li>
+            <?php 
+            $index = 0;
+            $num = count($categories);
+            while ($index < $num): ?>
+                <li class="promo__item promo__item--boards">
+                    <a class="promo__link" href="#"><?= $categories[$index]; ?></a>
+                </li>
+                <?php $index++; ?>
+            <?php endwhile; ?>        
+
         </ul>
     </section>
     <section class="lots">
@@ -77,10 +143,17 @@ $user_name = ''; // укажите здесь ваше имя
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <!--заполните этот список из массива категорий-->
+          <?php 
+           $index = 0;
+           $num = count($categories);
+           while ($index < $num): ?>
+
             <li class="nav__item">
-                <a href="pages/all-lots.html">Название категории</a>
+                <a href="#"><? = $categories[$index]; ?></a>
             </li>
+            <?php $index++; ?>
+           <?php endwhile; ?>
+
         </ul>
     </nav>
     <div class="main-footer__bottom container">
