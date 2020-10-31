@@ -101,10 +101,10 @@ $lots = [
         <ul class="promo__list">
             <?php 
             $index = 0;
-            $num = count($categories);
+            $num = count($staff);
             while ($index < $num): ?>
                 <li class="promo__item promo__item--boards">
-                    <a class="promo__link" href="#"><?= $categories[$index]; ?></a>
+                    <a class="promo__link" href="#"><?= $staff[$index]; ?></a>
                 </li>
                 <?php $index++; ?>
             <?php endwhile; ?>        
@@ -145,11 +145,11 @@ $lots = [
         <ul class="nav__list container">
           <?php 
            $index = 0;
-           $num = count($categories);
+           $num = count($staff);
            while ($index < $num): ?>
 
             <li class="nav__item">
-                <a href="#"><?= $categories[$index]; ?></a>
+                <a href="#"><?= $staff[$index]; ?></a>
             </li>
             <?php $index++; ?>
            <?php endwhile; ?>
