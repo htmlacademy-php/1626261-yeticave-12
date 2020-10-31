@@ -149,7 +149,7 @@ $lots = [
            while ($index < $num): ?>
 
             <li class="nav__item">
-                <a href="#"><? = $categories[$index]; ?></a>
+                <a href="#"><?= $categories[$index]; ?></a>
             </li>
             <?php $index++; ?>
            <?php endwhile; ?>
