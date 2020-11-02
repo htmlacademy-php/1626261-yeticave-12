@@ -116,7 +116,7 @@ $lots = [
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-        <?php foreach ($lots as $key => $value)
+        <?php foreach ($lots as $key => $value): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
                     <img src="<?= $value['image']; ?>" width="350" height="260" alt="<?= $value['name']; ?>">
@@ -135,6 +135,7 @@ $lots = [
                     </div>
                 </div>
             </li>
+        <?php endforeach; ?>    
         </ul>
     </section>
 </main>
