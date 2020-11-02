@@ -79,7 +79,7 @@ $lots = [
                <a class="user-menu__logout" href="#">Выход</a>
             </div>
         
-            <?php else ($is_auth != 1): ?>
+            <?php else: ?>
                 <ul class="user-menu__list">
                   <li class="user-menu__item">
                   <a href="#">Регистрация</a>
