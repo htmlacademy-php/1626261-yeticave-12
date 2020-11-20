@@ -22,7 +22,7 @@
         <?php foreach ($lots as $key => $value): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="<?= $value['image']; ?>" width="350" height="260" alt="<?= $value['name']; ?>">
+                    <img src="<?= htmlspecialchars($value['image']); ?>" width="350" height="260" alt="<?= htmlspecialchars($value['name']); ?>">
                 </div>
                 <div class="lot__info">
                     <span class="lot__category"><?= htmlspecialchars($value['categories']); ?></span>
