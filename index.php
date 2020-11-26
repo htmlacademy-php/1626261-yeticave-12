@@ -1,4 +1,5 @@
 <?php
+
 include_once('functions.php');
 include_once('data.php');
 
@@ -15,5 +16,3 @@ $layout_content = include_template('layout.php', [
 ]);
 
 print($layout_content);
-
-?>
