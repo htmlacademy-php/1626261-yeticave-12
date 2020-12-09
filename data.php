@@ -9,7 +9,7 @@ $lots = [
             'categories' => $staff[0] ,
             'price' => 10999 ,
             'image' => 'img/lot-1.jpg',
-            'timeOff' => '2020-12-01'
+            'timeOff' => strtotime('2020-12-15')
            ],
 
            [
@@ -17,7 +17,7 @@ $lots = [
             'categories' => $staff[0] ,
             'price' => 159999 ,
             'image' => 'img/lot-2.jpg',
-            'timeOff' => '2020-12-14'
+            'timeOff' => strtotime('+5 hours +48 minutes')
            ],
 
            [
@@ -25,7 +25,7 @@ $lots = [
             'categories' => $staff[1] ,
             'price' => 8000 ,
             'image' => 'img/lot-3.jpg',
-            'timeOff' => '2020-12-11'
+            'timeOff' => strtotime('+25 minutes')
            ],
 
            [
@@ -33,7 +33,7 @@ $lots = [
             'categories' => $staff[2] ,
             'price' => 10999 ,
             'image' => 'img/lot-4.jpg',
-            'timeOff' => '2020-12-09'
+            'timeOff' => strtotime('+4 hours')
            ],
 
            [
@@ -41,7 +41,7 @@ $lots = [
             'categories' => $staff[3] ,
             'price' => 7500 ,
             'image' => 'img/lot-5.jpg',
-            'timeOff' => '2020-12-03'
+            'timeOff' => strtotime('+3 hours')
            ],
 
            [
@@ -49,17 +49,9 @@ $lots = [
             'categories' => $staff[5] ,
             'price' =>  5400 ,
             'image' => 'img/lot-6.jpg',
-            'timeOff' => '2020-12-05'
+            'timeOff' => strtotime('+8 hours')
            ]
 
 ];
-
-function formatSum(float $sum): string
-{
-    $price = ceil($sum);
-    $priceFormated = number_format($price, 0, ',', ' '). " ₽";
-
-    return htmlspecialchars($priceFormated);
-}
 
 ?>
