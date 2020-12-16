@@ -32,8 +32,11 @@
                             <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?= formatSum($value['price']); ?></span>
                         </div>
-                        <div class="lot__timer timer">
-                            12:23
+                            <?php $date =  restOfTime($value['timeOff']); ?>
+                        <div class="lot__timer timer <?php if ($date[0] == 0) echo 'timer--finishing'; ?>">
+                            <?php
+                               echo "$date[0] : $date[1]";
+                            ?>
                         </div>
                     </div>
                 </div>
