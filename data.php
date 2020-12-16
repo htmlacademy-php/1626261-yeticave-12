@@ -9,7 +9,7 @@ $lots = [
             'categories' => $staff[0] ,
             'price' => 10999 ,
             'image' => 'img/lot-1.jpg',
-            'timeOff' => strtotime('2020-12-15')
+            'timeOff' => strtotime('2020-12-18')
            ],
 
            [
